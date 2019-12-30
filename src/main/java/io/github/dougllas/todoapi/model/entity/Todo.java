@@ -3,6 +3,7 @@ package io.github.dougllas.todoapi.model.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.github.dougllas.todoapi.model.enums.Categoria;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +16,7 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Todo {
 
     @Id
