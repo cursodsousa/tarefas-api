@@ -36,7 +36,7 @@ public class TodoController {
             @RequestBody TodoDTO tarefa,
             @ApiParam("Email do cliente")
             @RequestHeader("x-tenant-id") String email ){
-        Todo todo = new Todo(null, email, tarefa.getDescricao(), false);
+        Todo todo = new Todo(null, email, tarefa.getDescricao(), false, tarefa.getCategoria());
         return repository.save(todo);
     }
 

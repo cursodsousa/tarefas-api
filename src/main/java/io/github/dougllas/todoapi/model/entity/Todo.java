@@ -1,6 +1,7 @@
 package io.github.dougllas.todoapi.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.github.dougllas.todoapi.model.enums.Categoria;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,5 +26,7 @@ public class Todo {
     private String descricao;
 
     private boolean done;
+
+    private Categoria categoria;
 
 }
