@@ -2,6 +2,7 @@ package io.github.dougllas.todoapi.api.resource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.dougllas.todoapi.model.entity.Todo;
+import io.github.dougllas.todoapi.model.enums.Categoria;
 import io.github.dougllas.todoapi.model.repository.TodoRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -50,7 +51,7 @@ class TodoControllerTest {
     @Test
     void save() throws Exception {
         String email = "email@dominio.com";
-        Todo todo = new Todo(1l , email, "something to do", false);
+        Todo todo = new Todo(1l , email, "something to do", false, Categoria.ESTUDOS);
 
         BDDMockito.given(repository.save(Mockito.any(Todo.class))).willReturn(todo);
         String json = new ObjectMapper().writeValueAsString(todo);
@@ -75,7 +76,7 @@ class TodoControllerTest {
     void done() throws Exception{
         String email = "email@dominio.com";
 
-        Todo todo = new Todo(1l , email, "something to do", true);
+        Todo todo = new Todo(1l , email, "something to do", true, Categoria.ESTUDOS);
         BDDMockito.given( repository.save(Mockito.any(Todo.class)) ).willReturn(todo);
 
         this.mockMvc
